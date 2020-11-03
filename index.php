@@ -143,12 +143,12 @@
             var VietNamGGM = new ol.layer.Image({
             source: new ol.source.ImageWMS({
             ratio: 1,
-            url: 'http://localhost:8082/geoserver/ggmap_v1/wms?',
+            url: 'http://localhost:8080/geoserver/BaNaNe/wms?',
             params: {
             'FORMAT': format,
-            'VERSION': '1.1.1',
-            STYLES: 'style_map',
-            LAYERS: 'ggmap_v1:gadm36_vnm_2',
+            'VERSION': '1.1.0',
+            STYLES: '',
+            LAYERS: 'BaNaNe:gadm36_vnm_2',
             }
             })
             });
@@ -156,12 +156,12 @@
             var VietNamGGM_roads = new ol.layer.Image({
             source: new ol.source.ImageWMS({
             ratio: 1,
-            url: 'http://localhost:8082/geoserver/ggmap_v1/wms?',
+            url: 'http://localhost:8080/geoserver/BaNaNe/wms?',
             params: {
             'FORMAT': format,
-            'VERSION': '1.1.1',
-            STYLES: 'style_map',
-            LAYERS: 'ggmap_v1:vnm_roads',
+            'VERSION': '1.1.0',
+            STYLES: '',
+            LAYERS: 'BaNaNe:vnm_roads',
             }
             })
             });
@@ -235,7 +235,7 @@
                     anchor: [0.5, 0.5],
                     anchorXUnits: "fraction",
                     anchorYUnits: "fraction",
-                    src: "http://localhost:8080/ggmap_v1/Yellow_dot.svg"
+                    src: "http://localhost:8080/BaNaNe/Yellow_dot.svg"
                 })
             });
             var vectorLayerPoint = new ol.layer.Vector({
@@ -823,7 +823,7 @@
         <ul class="navbar-nav bg-light sidebar sidebar-light accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:8080/ggmap_v1/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:8080/BaNaNe/">
                 <div class="sidebar-brand-icon rotate-n-15">
 
                 <i class="fa fa-globe"></i>

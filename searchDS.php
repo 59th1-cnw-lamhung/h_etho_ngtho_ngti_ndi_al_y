@@ -3,7 +3,8 @@
     
     //include ('searchDT.php');
 
-    $paPDO = new PDO('pgsql:host=localhost;dbname=VietNam_GADM;port=5432', 'postgres', '140599');
+    // $paPDO = new PDO('pgsql:host=localhost;dbname=BTL;port=5432', 'postgres', '696969');
+    include 'connectDB.php';
 
     
     function query($paPDO, $paSQLStr)
