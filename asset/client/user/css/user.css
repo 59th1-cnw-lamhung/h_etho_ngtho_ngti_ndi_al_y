@@ -1,0 +1,282 @@
+header {
+  height: 400px;
+  /* background: src="Artboard 1.png "no-repeat center; */
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+}
+
+body{
+  background-color: #18a87313;
+}
+.navbar-nav {
+  margin-top: 14px;
+  border: 0px;
+}
+
+.navbar-nav .nav li {
+  height: 50px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 32px;
+}
+.nav-pills > li > a {
+  color: rgb(255, 255, 255);
+  
+}
+.nav-pills > li > a:hover {
+  background-color: #726602;
+  
+}
+.nav-pills  {
+  
+  background-color: #726602;
+}
+.navbar-default .navbar-nav > li > a {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: #726602ee;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: rgba(0,0,0,0.6);
+  font-weight: bold;
+}
+
+.navbar-toggle {
+  background-color: #fff !important;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  margin-top: 20px;
+}
+
+nav.navbar.navbar-default {
+  background: none;
+  box-shadow: none;
+  border: 0px;
+}
+.fb-page{
+  padding-top: 108px;
+}
+.navbar-brand {
+  height: 75px;
+  font-size: 30px;
+  color: #fff !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
+
+.navbar-brand span.text-title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (max-width:767px) {
+  .navbar-brand span.text-title {
+    display: none;
+  }
+  body {
+    overflow-x: hidden !important;
+}
+.container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+}
+
+.navbar-brand .glyphicon {
+  display: inline-block;
+  font-size: 36px;
+  color: #fff;
+  vertical-align: middle;
+  margin-right: 20px;
+  position: relative;
+  top: -2px;
+}
+
+@media (min-width:768px) {
+  .navbar-nav li {
+    margin-left: 10px;
+  }
+  body {
+    overflow-x: hidden !important;
+}
+.container {
+    max-width: 100% !important;
+    overflow-y: hidden !important;
+}
+}
+
+.categories {
+  text-align: center !important;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 10px;
+}
+
+.categories li {
+  display: inline-block !important;
+  float: none;
+}
+.article-left img {
+  width: 100%;
+}
+article {
+  display: flex;
+  margin-bottom: 50px;
+}
+.article-left {
+  width: 40%;
+}
+.article-left img {
+  border-radius: 10px;
+}
+.article-right {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  justify-content: space-between;
+}
+.article-right .meta {
+  margin: 18px 0;
+}
+.article-right .additional {
+  margin-top: 18px;
+}
+.article-right > h3 > a{
+  color: #726602;
+}
+.post-link  > a{
+  color: #726602;
+}
+.inner > a{
+  color: #726602;
+}
+.post-body {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+@media (min-width:992px) {
+  .post-title {
+    text-align: right;
+    padding-right: 30px;
+  }
+  
+  body {
+    overflow-x: hidden !important;
+}
+.container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+}
+
+.post-title .author {
+  text-transform: uppercase;
+}
+
+.post-body figure {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.post-title .author span {
+  margin-left: 5px;
+}
+
+.post-title h1 {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+@media (max-width:767px) {
+  .post-title h1 {
+    margin-top: 20px;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  body {
+    overflow-x: hidden !important;
+}
+.container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+}
+
+
+
+footer {
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+}
+
+#imgfooter{
+  width: 100%;
+  height: 100%;
+}
+
+/* footer h5 {
+  color: inherit;
+} */
+
+div.container.post {
+  margin-bottom: 50px;
+}
+#fb-facebook  {
+  color: #fff;
+  font-size: 35px;;
+  margin-left: 12px;
+  margin-right: 12px;
+
+}
+#fb-youtube{
+  color: #fff;
+  font-size: 35px;;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+#fb-twitter{
+  color: #fff;
+  font-size: 35px;;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+#fb-twitter:hover{
+  color: #1984e2;
+}
+#fb-facebook:hover{
+  color: #1984e2;
+}
+#fb-youtube:hover{
+  color: #1984e2;
+}
+#copyright:hover{
+  color: #1984e2;
+}
+#copyright{
+  vertical-align:baseline;
+  padding-bottom: 12px;
+  color: white;
+  font-size: 30px;
+}
+.address > a {
+  color: #1984e2;
+}
+
+.footer-top{
+  
+  margin-bottom: 12px;
+}

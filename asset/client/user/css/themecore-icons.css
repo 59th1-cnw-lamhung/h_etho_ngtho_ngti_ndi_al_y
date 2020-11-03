@@ -1,0 +1,350 @@
+@font-face {
+  font-family: 'themecore';
+  src:  url('../fonts/themecore.eot?ejf562');
+  src:  url('../fonts/themecore.eot?ejf562#iefix') format('embedded-opentype'),
+    url('../fonts/themecore.ttf?ejf562') format('truetype'),
+    url('../fonts/themecore.woff?ejf562') format('woff'),
+    url('../fonts/themecore.svg?ejf562#craft') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="themecore-"], [class*=" themecore-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'themecore' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.themecore-instagram:before {
+  content: "\e91c";
+}
+.themecore-linkedin:before {
+  content: "\e91e";
+}
+.themecore-googleplus:before {
+  content: "\e921";
+}
+.themecore-pencil:before {
+  content: "\e900";
+}
+.themecore-lock:before {
+  content: "\e901";
+}
+.themecore-unlock:before {
+  content: "\e902";
+}
+.themecore-menu:before {
+  content: "\e903";
+}
+.themecore-play-button:before {
+  content: "\e904";
+}
+.themecore-plane:before {
+  content: "\e905";
+}
+.themecore-close-button1:before {
+  content: "\e906";
+}
+.themecore-close-button2:before {
+  content: "\e907";
+}
+.themecore-tick2:before {
+  content: "\e908";
+}
+.themecore-certificate:before {
+  content: "\e909";
+}
+.themecore-planet:before {
+  content: "\e90a";
+}
+.themecore-expand:before {
+  content: "\e90b";
+}
+.themecore-level:before {
+  content: "\e90c";
+}
+.themecore-email:before {
+  content: "\e90d";
+}
+.themecore-diamond:before {
+  content: "\e90e";
+}
+.themecore-arrow-bottom:before {
+  content: "\e90f";
+}
+.themecore-arrow-top:before {
+  content: "\e910";
+}
+.themecore-arrow-left:before {
+  content: "\e911";
+}
+.themecore-arrow-right:before {
+  content: "\e912";
+}
+.themecore-call-answer:before {
+  content: "\e913";
+}
+.themecore-shop5:before {
+  content: "\e914";
+}
+.themecore-plus1:before {
+  content: "\e915";
+}
+.themecore-flickr:before {
+  content: "\e916";
+}
+.themecore-dribbble:before {
+  content: "\e917";
+}
+.themecore-behance:before {
+  content: "\e918";
+}
+.themecore-android:before {
+  content: "\e919";
+}
+.themecore-apple:before {
+  content: "\e91a";
+}
+.themecore-plus2:before {
+  content: "\e91b";
+}
+.themecore-tick3:before {
+  content: "\e91d";
+}
+.themecore-pinterest:before {
+  content: "\e91f";
+}
+.themecore-facebook:before {
+  content: "\e920";
+}
+.themecore-vimeo:before {
+  content: "\e922";
+}
+.themecore-youtube:before {
+  content: "\e923";
+}
+.themecore-github:before {
+  content: "\e924";
+}
+.themecore-twitter:before {
+  content: "\e925";
+}
+.themecore-paypal:before {
+  content: "\e926";
+}
+.themecore-black-envelope:before {
+  content: "\e927";
+}
+.themecore-soundcloud:before {
+  content: "\e928";
+}
+.themecore-share:before {
+  content: "\e929";
+}
+.themecore-spotify:before {
+  content: "\e92a";
+}
+.themecore-map:before {
+  content: "\e92b";
+}
+.themecore-tumblr:before {
+  content: "\e92c";
+}
+.themecore-pen:before {
+  content: "\e92d";
+}
+.themecore-image:before {
+  content: "\e92e";
+}
+.themecore-dollar:before {
+  content: "\e92f";
+}
+.themecore-calendar:before {
+  content: "\e930";
+}
+.themecore-bookmark:before {
+  content: "\e931";
+}
+.themecore-arrow-left2:before {
+  content: "\e932";
+}
+.themecore-arrow-right2:before {
+  content: "\e933";
+}
+.themecore-arrow-left3:before {
+  content: "\e934";
+}
+.themecore-vk:before {
+  content: "\e935";
+}
+.themecore-chat2:before {
+  content: "\e936";
+}
+.themecore-users:before {
+  content: "\e937";
+}
+.themecore-arrow-right4:before {
+  content: "\e938";
+}
+.themecore-arrow-left4:before {
+  content: "\e939";
+}
+.themecore-question:before {
+  content: "\e93a";
+}
+.themecore-star:before {
+  content: "\e93b";
+}
+.themecore-arrow-left5:before {
+  content: "\e93c";
+}
+.themecore-arrow-right5:before {
+  content: "\e93d";
+}
+.themecore-next-track:before {
+  content: "\e93e";
+}
+.themecore-previous:before {
+  content: "\e93f";
+}
+.themecore-pause-button:before {
+  content: "\e940";
+}
+.themecore-star-half-empty:before {
+  content: "\e941";
+}
+.themecore-star-empty:before {
+  content: "\e942";
+}
+.themecore-whatsapp:before {
+  content: "\e943";
+}
+.themecore-calendar2:before {
+  content: "\e944";
+}
+.themecore-heart-outline:before {
+  content: "\e945";
+}
+.themecore-clock:before {
+  content: "\e946";
+}
+.themecore-asside:before {
+  content: "\e947";
+}
+.themecore-image-gallery:before {
+  content: "\e948";
+}
+.themecore-photo:before {
+  content: "\e949";
+}
+.themecore-link:before {
+  content: "\e94a";
+}
+.themecore-audio:before {
+  content: "\e94b";
+}
+.themecore-info:before {
+  content: "\e94c";
+}
+.themecore-status:before {
+  content: "\e94d";
+}
+.themecore-play:before {
+  content: "\e94e";
+}
+.themecore-eye:before {
+  content: "\e94f";
+}
+.themecore-viber:before {
+  content: "\e950";
+}
+.themecore-play-arrow:before {
+  content: "\e951";
+}
+.themecore-heart-full:before {
+  content: "\e952";
+}
+.themecore-magnifier1:before {
+  content: "\e953";
+}
+.themecore-dropbox:before {
+  content: "\e954";
+}
+.themecore-pin:before {
+  content: "\e955";
+}
+.themecore-magnifier2:before {
+  content: "\e956";
+}
+.themecore-magnifier3:before {
+  content: "\e957";
+}
+.themecore-envato:before {
+  content: "\e958";
+}
+.themecore-quote:before {
+  content: "\e959";
+}
+.themecore-telephone:before {
+  content: "\e95a";
+}
+.themecore-shop1:before {
+  content: "\e95b";
+}
+.themecore-user1:before {
+  content: "\e95c";
+}
+.themecore-user2:before {
+  content: "\e95d";
+}
+.themecore-speech-bubble:before {
+  content: "\e95e";
+}
+.themecore-shop2:before {
+  content: "\e95f";
+}
+.themecore-snapchat:before {
+  content: "\e960";
+}
+.themecore-plus3:before {
+  content: "\e961";
+}
+.themecore-minus:before {
+  content: "\e962";
+}
+.themecore-tick1:before {
+  content: "\e963";
+}
+.themecore-quora:before {
+  content: "\e964";
+}
+.themecore-delicious:before {
+  content: "\e965";
+}
+.themecore-digg:before {
+  content: "\e966";
+}
+.themecore-rss:before {
+  content: "\e967";
+}
+.themecore-menu-button:before {
+  content: "\e968";
+}
+.themecore-shop3:before {
+  content: "\e969";
+}
+.themecore-shop4:before {
+  content: "\e96a";
+}
+.themecore-external-link:before {
+  content: "\e96d";
+}
