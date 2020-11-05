@@ -90,7 +90,7 @@
         //echo "<br>";
         //$mySQLStr = "SELECT ST_AsGeoJson(geom) as geo from \"cmr_adm1\" where ST_Within('SRID=4326;POINT(12 5)'::geometry,geom)";
         //$mySQLStr = "SELECT ST_AsGeoJson(geom) as geo from \"gadm36_vnm_2\" where ST_Within('SRID=".$paSRID.";".$paPoint."'::geometry,geom)";
-        $mySQLStr = "SELECT ST_Area(geom::geography)/1000000 as area, danso.name_2 as name2, danso.name_1 as name1, gid, ST_Perimeter(geom::geography)/1000 as peri, sodan, matdo_danso from gadm36_vnm_2, danso where ST_Within('SRID=".$paSRID.";".$paPoint."'::geometry,geom) and gadm36_vnm_2.name_2=danso.name_2 and gadm36_vnm_2.name_1=danso.name_1";
+        $mySQLStr = "SELECT ST_Area(geom::geography)/1000000 as area, danso.name_2 as name2, danso.name_1 as name1, gid, ST_Perimeter(geom::geography)/1000 as peri, sodan, matdo_danso, type_2 from gadm36_vnm_2, danso where ST_Within('SRID=".$paSRID.";".$paPoint."'::geometry,geom) and gadm36_vnm_2.name_2=danso.name_2 and gadm36_vnm_2.name_1=danso.name_1";
         //id_1, shape_leng, 
 		//echo $mySQLStr;
 		
@@ -102,12 +102,12 @@
             $resFin = '<table>';
             // Lặp kết quả
             foreach ($result as $item){
-                $resFin = $resFin.'<tr><td>id: '.$item['gid'].'</td></tr>';
+                $resFin = $resFin.'<tr><td>Loại: '.$item['type_2'].'</td></tr>';
                 $resFin = $resFin.'<tr><td>Tỉnh(thành phố): '.$item['name1'].'</td></tr>';
                 $resFin = $resFin.'<tr><td>Quận(huyện): '.$item['name2'].'</td></tr>';
                 $resFin = $resFin.'<tr><td>Chu vi: '.round($item['peri'],3). ' km </td></tr>';
                 $resFin = $resFin.'<tr><td>Diện tích: '.round($item['area'],3).' km<sup>2</sup></td></tr>';
-                $resFin = $resFin.'<tr><td>Dân số: '.$item['sodan'].' người</td></tr>';
+                $resFin = $resFin.'<tr><td>Dân số: '.$item['sodan'].' nghìn người</td></tr>';
                 $resFin = $resFin.'<tr><td>Mật độ dân số: '.$item['matdo_danso'].' người/km<sup>2</sup></td></tr>';
                 break;
             }

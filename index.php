@@ -166,6 +166,33 @@
             })
             });
 
+            var VietNamGGM_dot = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+            ratio: 1,
+            url: 'http://localhost:8082/geoserver/ggmap_v1/wms?',
+            params: {
+            'FORMAT': format,
+            'VERSION': '1.1.1',
+            STYLES: '',
+            LAYERS: 'ggmap_v1:world_cities',
+            }
+            })
+            });
+
+
+            var VietNamGGM_river = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+            ratio: 1,
+            url: 'http://localhost:8082/geoserver/ggmap_v1/wms?',
+            params: {
+            'FORMAT': format,
+            'VERSION': '1.1.1',
+            STYLES: '',
+            LAYERS: 'ggmap_v1:vnm_water_lines_dcw',
+            }
+            })
+            });
+
             var container = document.getElementById('popup');
             var content = document.getElementById('popup-content');
             var closer = document.getElementById('popup-closer');
@@ -193,7 +220,7 @@
 
             var map = new ol.Map({
             target: 'map',
-            layers: [layerBG, VietNamGGM, VietNamGGM_roads],
+            layers: [layerBG, VietNamGGM, VietNamGGM_roads, VietNamGGM_dot, VietNamGGM_river],
             overlays: [overlay],
             view: viewMap
             });
@@ -205,13 +232,23 @@
                     }),
                     stroke: new ol.style.Stroke({
                         color: 'yellow', 
-                        width: 1
+                        width: 2
                     })
                 }),
                 'MultiLineString': new ol.style.Style({
                     stroke: new ol.style.Stroke({
                         color: 'green', 
                         width: 3
+                    })
+                }),
+                'Point': new ol.style.Style({
+                    
+                    image: new ol.style.Circle({
+                        radius: 7,
+                        fill: new ol.style.Fill({color: 'green'}),
+                        stroke: new ol.style.Stroke({
+                        color: 'green', width: 2
+                        })
                     })
                 })
                 
@@ -228,22 +265,7 @@
 
             //map.addLayer(vectorLayer);
 
-            
 
-            /*var stylePoint = new ol.style.Style({
-                image: new ol.style.Icon({
-                    anchor: [0.5, 0.5],
-                    anchorXUnits: "fraction",
-                    anchorYUnits: "fraction",
-                    src: "http://localhost:8080/ggmap_v1/Yellow_dot.svg"
-                })
-            });
-            var vectorLayerPoint = new ol.layer.Vector({
-                //source: vectorSource,
-                //style: styleFunction
-                style: stylePoint
-            });
-            map.addLayer(vectorLayerPoint);*/
 
             function createJsonObj(result) {                    
                 var geojsonObject = '{'
@@ -261,18 +283,6 @@
                     + '}';
                 return geojsonObject;
             }
-            /*function drawGeoJsonObj(paObjJson) {
-                var vectorSource = new ol.source.Vector({
-                    features: (new ol.format.GeoJSON()).readFeatures(paObjJson, {
-                        dataProjection: 'EPSG:4326',
-                        featureProjection: 'EPSG:3857'
-                    })
-                });
-                var vectorLayer = new ol.layer.Vector({
-                    source: vectorSource
-                });
-                map.addLayer(vectorLayer);
-            }*/
             
             function highLightGeoJsonObj(paObjJson) {
 
@@ -282,42 +292,21 @@
                         featureProjection: 'EPSG:3857'
                     })
                 });
-                //vectorLayerPoint.setSource(vectorSource);
-                /*
-                var vectorLayerPoint = new ol.layer.Vector({
-                    source: vectorSource
-                });
-                map.addLayer(vectorLayerPoint);
-                */
-                /*var vectorLayer = new ol.layer.Vector({
-                    source: vectorSource
-                });*/
-
-                
-
                 
                 vectorLayer.setSource(vectorSource);
-                
-
-                
-                
+    
             }
             function highLightObj(result) {
                 
-                
-                //alert("result: " + result);
                 var strObjJson = createJsonObj(result);
-                //alert("Full Json: " + strObjJson);
+               
                 var objJson = JSON.parse(strObjJson);
-                //alert("Full Json: " + JSON.stringify(objJson));
-                //drawGeoJsonObj(objJson);
+                
                 highLightGeoJsonObj(objJson);
             }
 
             function infoObj(result){
                 $("#info").html(result);
-                
-                //$("#popup-content").html(result);
                 
             }
 
@@ -329,8 +318,6 @@
             var CBVung = document.getElementById('cbvung');
             if (CBVung.checked==false)
             {
-                //map.removeLayer(vectorLayerroad);
-                            //map.removeLayer(vectorLayer);
                 VietNamGGM.setVisible(false);
                 
             }
@@ -338,9 +325,21 @@
             var CBDuong = document.getElementById('cbduong');
             if (CBDuong.checked==false)
             {
-                //map.removeLayer(vectorLayerroad);
-                            //map.removeLayer(vectorLayer);
                 VietNamGGM_roads.setVisible(false);
+                
+            }
+
+            var CBDiem = document.getElementById('cbdiem');
+            if (CBDiem.checked==false)
+            {
+                VietNamGGM_dot.setVisible(false);
+                
+            }
+
+            var CBSong = document.getElementById('cbsong');
+            if (CBSong.checked==false)
+            {
+                VietNamGGM_river.setVisible(false);
                 
             }
 
@@ -410,10 +409,7 @@
                 {
                     map.removeLayer(vectorLayer);
                     VietNamGGM.setVisible(false);
-                    
-                    
-                    
-                    
+    
                 }
             });
 
@@ -482,6 +478,109 @@
                     VietNamGGM_roads.setVisible(false);
                 }
             });
+
+
+
+            $("#cbdiem").change(function () {
+                if($("#cbdiem").is(":checked"))
+                {
+                    VietNamGGM_dot.setVisible(true);
+                    map.addLayer(vectorLayer);
+
+                    map.on('click', function (evt) {
+                        //alert("coordinate: " + evt.coordinate);
+                        //var myPoint = 'POINT(12,5)';
+                        var lonlat = ol.proj.transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326');
+                        var lon = lonlat[0];
+                        var lat = lonlat[1];
+                        var myPoint = 'POINT(' + lon + ' ' + lat + ')';
+                        console.log(myPoint)
+                        
+                        $.ajax({
+                            type: "POST",
+                            url: "dots_pgsqlAPI.php",
+                            //dataType: 'json',
+                            data: {functionname: 'getGeoDotsToAjax', paPoint: myPoint},
+                            success : function (result, status, error) {
+                                if($("#cbdiem").is(":checked"))
+                                {
+                                    highLightObj(result);
+                                    
+                                }
+                            },
+                            error: function (req, status, error) {
+                                alert(req + " " + status + " " + error);
+                                console.log('that bai');
+                            }
+                        });
+
+                        $.ajax({
+                            type: "POST",
+                            url: "dots_pgsqlAPI.php",
+                            //dataType: 'json',
+                            data: {functionname: 'getInfoDotsToAjax', paPoint: myPoint},
+                            success : function (result, status, error) {
+                                if($("#cbdiem").is(":checked"))
+                                {
+                                    $("#popup-content").html(result);
+                                    overlay.setPosition(evt.coordinate);
+                                    //console.log('thanh cong');
+                                    console.log(result);
+                                }
+                                //infoObj(result);
+                                
+                            },
+                            error: function (req, status, error) {
+                                alert(req + " " + status + " " + error);
+                                console.log('that bai');
+                            }
+                        });
+
+
+
+                    });
+                }
+                else
+                {
+                    map.removeLayer(vectorLayer);
+                    VietNamGGM_roads.setVisible(false);
+                }
+            });
+
+
+
+
+            $("#cbdiem").change(function () {
+                if($("#cbdiem").is(":checked"))
+                {
+                    VietNamGGM_dot.setVisible(true);
+                    //map.addLayer(vectorLayer);
+
+                    
+                }
+                else
+                {
+                    //map.removeLayer(vectorLayer);
+                    VietNamGGM_dot.setVisible(false);
+                }
+            });
+
+            $("#cbsong").change(function () {
+                if($("#cbsong").is(":checked"))
+                {
+                    VietNamGGM_river.setVisible(true);
+                    //map.addLayer(vectorLayer);
+
+                    
+                }
+                else
+                {
+                    //map.removeLayer(vectorLayer);
+                    VietNamGGM_river.setVisible(false);
+                }
+            });
+
+
 
             /*$("#tinh-thanhpho").change(function () {
                 
@@ -883,6 +982,11 @@
                             <label class="form-check-label" for="exampleCheck1">Chọn điểm</label>
                         </div>
 
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="cbsong">
+                            <label class="form-check-label" for="exampleCheck1">Chọn sông</label>
+                        </div>
+
                     </div>
                 </div>
 
@@ -1017,7 +1121,7 @@
                 
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-light type="button">
+                        <button class="btn btn-light" type="button">
                             <i class="fas fa-search fa-sm"></i>
                         </button>
                     </div>
